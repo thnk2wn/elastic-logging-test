@@ -1,0 +1,7 @@
+filebeat.config.inputs:
+  enabled: true
+  path: inputs.d/*.yml
+
+output.elasticsearch:
+  enabled: true
+  hosts: ["http://elasticsearch:9200"]

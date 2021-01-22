@@ -1,0 +1,8 @@
+- type: log
+  enabled: true
+  paths:
+    - /app/app.log
+  fields:
+    app: my-app
+    env: local
+    host: localhost
