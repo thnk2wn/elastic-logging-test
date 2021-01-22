@@ -39,7 +39,7 @@ services:
     volumes:
         - ${CONFIG_PATH}/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
         - ${CONFIG_PATH}/inputs.d:/usr/share/filebeat/inputs.d:ro
-        - /Users/ghudik/repos/thnk2wn/elastic-logging-test/app/bin:/app
+        - ${APP_PATH}:/app
         - /var/lib/docker:/var/lib/docker:ro
         - /var/run/docker.sock:/var/run/docker.sock
 
