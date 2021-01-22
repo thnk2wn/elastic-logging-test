@@ -1,7 +1,44 @@
+######################## Filebeat Configuration ############################
+# https://www.elastic.co/guide/en/beats/filebeat/index.html
+
+
+#==========================  Modules configuration =============================
+filebeat.modules:
+
+#---------------------------- Elasticsearch Module ----------------------------
+- module: elasticsearch
+
+  server:
+    enabled: true
+
+  gc:
+    enabled: true
+
+  audit:
+    enabled: true
+
+  slowlog:
+    enabled: true
+
+  deprecation:
+    enabled: true
+
+#-------------------------------- Kibana Module --------------------------------
+- module: kibana
+
+  log:
+    enabled: true
+
+#=========================== Filebeat inputs =============================
 filebeat.config.inputs:
   enabled: true
   path: inputs.d/*.yml
 
+# ================================== Outputs ===================================
+
+# Configure what output to use when sending the data collected by the beat.
+
+# ---------------------------- Elasticsearch Output ----------------------------
 output.elasticsearch:
   enabled: true
   hosts: ["http://elasticsearch:9200"]

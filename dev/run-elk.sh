@@ -11,4 +11,4 @@ pushd "$(dirname $(realpath $0))"
 rm -f $APP_PATH/app.log
 
 echo "Starting up..."
-docker compose up
+docker-compose up -V
